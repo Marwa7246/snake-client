@@ -2,14 +2,16 @@
  * Setup User Interface 
  * Specifically, so that we can handle user input via stdin
  */
+//let connection;
+
 const setupInput = function() {
+  //connection = conn;   
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
   stdin.resume();
 
-  stdin.on(handleUserInput, (key) => { 
-  });
+  stdin.on('data', handleUserInput)
  
   return stdin;
 }
